@@ -1,0 +1,9 @@
+.footer {
+  flex: 1;
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: auto;
+  background-color: var(--mybrown);
+  font-family: var(--cfont);
+} 

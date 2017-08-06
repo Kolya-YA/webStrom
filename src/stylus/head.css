@@ -1,0 +1,35 @@
+:root {
+  --main-color: #ffd27b;
+  --header-bg-color: color(var(--main-color) lightness(-10%));
+  --footer-bg-color: color(var(--header-bg-color) lightness(-10%));
+  --nav-color: color(var(--header-bg-color) hue(-60%));
+  --nav-item-color: color(var(--nav-color) hue(180%));
+  --mywithe: #feffff;
+  --myblue: #98dafc;
+  --mybrown: #daad86;
+  --mydark: #312c32;
+}
+
+@custom-selector :--fover :hover, :focus;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+
+html {
+  display: flex;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% - 8px);
+  min-height: 100%;
+  margin: 4px auto;
+  background-image: linear-gradient(105deg, var(--mywithe), color(var(--mywithe) lightness(-5%)));
+}

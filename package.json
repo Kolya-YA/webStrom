@@ -1,0 +1,24 @@
+{
+  "name": "gulp-webstrom",
+  "version": "0.0.1",
+  "description": "WebStrom gulp project",
+  "author": "WebStrom",
+  "license": "MIT",
+  "devDependencies": {
+    "cssnano": "^3.10.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-debug": "^3.1.0",
+    "gulp-if": "^2.0.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sourcemaps": "^2.6.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^10.0.0"
+  }
+}

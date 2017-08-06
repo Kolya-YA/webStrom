@@ -1,0 +1,69 @@
+.toggle-menu {
+  position: absolute;
+  border: 1px solid color(var(--mybrown) l(-10%));
+  font-size: 0;
+  top: auto;
+  left: auto;
+  display: block;
+  background-color: var(--mybrown);
+  width: 50px;
+  height: 45px;
+  &:--fover {
+    background-color: color(var(--mybrown) l(-10%));
+  }
+}
+
+.toggle-menu__burger {
+  top: 20px;
+  left: 6px;
+}
+
+.toggle-menu__burger,
+.toggle-menu__burger::after,
+.toggle-menu__burger::before {
+  position: absolute;
+  display: block;
+  width: 35px;
+  height: 4px;
+  background-color: var(--mywithe);
+  border-radius: 2px;
+  content: '';
+}
+
+.header--closed .toggle-menu__burger {
+  &::after,
+  &::before {
+    /* autoprefixer: off */
+    transition-property: margin, transform;
+    /* autoprefixer: on */
+    transition-duration: 0.2s;
+    transition-delay:  0.2s, 0s;
+  }
+  &::before {
+  transform: translateY(-10px);
+  }
+  &::after {
+  transform: translateY(10px);
+  }
+}
+
+.header--opened .toggle-menu__burger {
+  background-color: rgba(0, 0, 0, 0);
+  transition-duration: 2s;
+  transition-delay:  0.2s;
+}
+
+.header--opened .toggle-menu__burger {
+  &::after,
+  &::before {
+  margin-top: 0;
+  transform-origin: 50% 50%;
+  transition-delay:  0s, 0.2s;
+  }
+  &::before {
+  transform: rotate(45deg);
+  }
+  &::after {
+  transform: rotate(-45deg);
+  }
+}
