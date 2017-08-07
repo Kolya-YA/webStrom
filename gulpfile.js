@@ -62,6 +62,7 @@ gulp.task('connect', function() {
 
 gulp.task('html', function () {
   gulp.src(path.src.html)
+    .pipe(plumber())
     .pipe(rigger())
     .pipe(gulp.dest(path.build.html)) 
     .pipe(connect.reload())
