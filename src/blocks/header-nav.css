@@ -14,7 +14,12 @@
   justify-content: space-between;
 }
   
-.header-nav-main__item {
+.header--closed .header-nav-main__item {
+  display: none;
+}
+
+.header--closed .header-nav-main__item--active {
+    display: block;
 }
 
 .header-nav-main__item a {

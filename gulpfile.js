@@ -25,6 +25,7 @@ var path = {
         //htaccess: 'src/.htaccess'
     },
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
+        all: 'build/**/*.*',
         html: 'src/**/*.html',
         js: 'src/blocks/**/*.js',
         css: 'src/blocks/**/*.css',
@@ -42,30 +43,24 @@ var gulp = require('gulp'),
   notify = require('gulp-notify'),
   sourcemaps = require('gulp-sourcemaps'),
   rename = require("gulp-rename"),
-  livereload = require('gulp-livereload'),
-  connect = require('gulp-connect'),
   rigger = require('gulp-rigger'),
   debug = require('gulp-debug'),
   del = require('del'),
   plumber = require('gulp-plumber'),
   postcss = require('gulp-postcss'),
-  jshint = require('gulp-jshint');
+  jshint = require('gulp-jshint'),
+  browserSync = require('browser-sync').create();
 
 
-gulp.task('connect', function() {
-  connect.server({
-    root: [path.outputDir],
-    livereload: true
-  });
+gulp.task('browserSync', function() {
+  browserSync.init({server: path.outputDir});
 });
 
 gulp.task('html', function () {
   gulp.src(path.src.html)
     .pipe(plumber())
     .pipe(rigger())
-    .pipe(gulp.dest(path.build.html)) 
-    .pipe(connect.reload())
-    .pipe(notify("HTML updated!"));
+    .pipe(gulp.dest(path.build.html));
 });
 
 gulp.task('css', function() {
@@ -79,14 +74,13 @@ gulp.task('css', function() {
     ]))
     .pipe(sourcemaps.write())
     .pipe(rename({basename: 'style', suffix: '.min'}))
-    .pipe(gulp.dest(path.build.css))
-    .pipe(connect.reload());
+    .pipe(gulp.dest(path.build.css));
 });
 
 gulp.task('fonts', function() {
   return gulp.src(path.src.fonts)
     .pipe(rename({dirname: ''}))
-    .pipe(gulp.dest(path.build.fonts))
+    .pipe(gulp.dest(path.build.fonts));
 });
 
 gulp.task('jshint', function() {
@@ -101,7 +95,7 @@ gulp.task('js', function() {
     .pipe(rigger())
     .pipe(sourcemaps.write())
     .pipe(rename({dbasename: 'main', suffix: '.min'}))
-    .pipe(gulp.dest(path.build.js))
+    .pipe(gulp.dest(path.build.js));
 });
 
 gulp.task('clean', function() {
@@ -113,6 +107,7 @@ gulp.task('watch', function() {
   gulp.watch(path.watch.js, ['js'])
   gulp.watch(path.watch.html, ['html'])
   gulp.watch(path.watch.fonts, ['fonts'])
+  gulp.watch(path.watch.all, browserSync.reload);
 });
 
-gulp.task('default', ['connect', 'html', 'css', 'js', 'watch', 'fonts']);
+gulp.task('default', ['browserSync', 'html', 'css',  'watch', 'fonts']);
