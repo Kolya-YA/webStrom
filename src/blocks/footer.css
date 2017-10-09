@@ -2,8 +2,40 @@
   flex: 1;
   flex-basis: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   margin-top: auto;
   background-color: var(--mybrown);
   font-family: var(--cfont);
-} 
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 10px 0;
+}
+
+.social__icon {
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--mywhite);
+  text-align: center;
+  border-radius: 4px;
+}
+
+.contacts {
+  margin: 10px 10px 15px;
+}
+
+.contacts a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    color: var(--mywhite);
+  }
+}
+.copyright {
+  margin: 15px 10px 10px;
+}

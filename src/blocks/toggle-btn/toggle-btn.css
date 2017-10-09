@@ -25,7 +25,7 @@
   display: block;
   width: 35px;
   height: 4px;
-  background-color: var(--mywithe);
+  background-color: var(--mywhite);
   border-radius: 2px;
   content: '';
   transform-origin: 50% 50%;

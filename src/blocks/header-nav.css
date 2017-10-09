@@ -31,7 +31,7 @@
   font-family: var(--hfont);
   text-decoration: none;
   padding: 25px 70px;
-  color: var(--mywithe);
+  color: var(--mywhite);
   font-size: 20px;
 }
 
@@ -40,12 +40,28 @@
     background-color: color(var(--mybrown) l(-10%));
     border-bottom: 2px solid color(var(--mybrown) l(-20%));
   }
-  &:active {
-    background-color: color(var(--mybrown) l(-20%));
-    border-bottom: 2px solid color(var(--mybrown) l(-25%));
-  }
 }
 
 .header-nav-main__item:last-child a {
   border-bottom: 0;
+}
+
+.footer .header-nav-main__item a {
+  padding: 5px;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  transition: .4s;
+  &::before {
+    content: "\2192\00a0";
+  }
+}
+
+.footer .header-nav-main__item a[href] {
+  &:--fover {
+    background-color: inherit;
+    border-bottom: inherit;
+    color: var(--mywhite);
+  }
 }
