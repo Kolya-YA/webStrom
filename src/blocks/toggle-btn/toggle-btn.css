@@ -1,61 +1,67 @@
 .toggle-menu {
-  position: absolute;
-  border: 1px solid color(var(--mybrown) l(-10%));
-  font-size: 0;
-  top: auto;
-  left: auto;
-  display: block;
-  background-color: var(--mybrown);
-  width: 50px;
-  height: 45px;
-  &:--fover {
-    background-color: color(var(--mybrown) l(-10%));
-  }
+  display: none;
 }
 
-.toggle-menu__burger {
-  top: 20px;
-  left: 6px;
-}
+@media (max-width: 479px) {
+  .toggle-menu {
+    position: absolute;
+    border: 1px solid color(var(--mybrown) l(-10%));
+    font-size: 0;
+    top: auto;
+    left: auto;
+    display: block;
+    background-color: var(--mybrown);
+    width: 50px;
+    height: 45px;
+    &:--fover {
+      background-color: color(var(--mybrown) l(-10%));
+    }
+  }
 
-.toggle-menu__burger,
-.toggle-menu__burger::after,
-.toggle-menu__burger::before {
-  position: absolute;
-  display: block;
-  width: 35px;
-  height: 4px;
-  background-color: var(--mywhite);
-  border-radius: 2px;
-  content: '';
-  transform-origin: 50% 50%;
-}
+  .toggle-menu__burger {
+    top: 20px;
+    left: 6px;
+  }
 
-.header--closed .toggle-menu__burger {
-  transition-duration: 0.6s;
-  &::after,
-  &::before {
-    transition: transform 0.3s 0s, margin 0.3s 0.3s;
+  .toggle-menu__burger,
+  .toggle-menu__burger::after,
+  .toggle-menu__burger::before {
+    position: absolute;
+    display: block;
+    width: 35px;
+    height: 4px;
+    background-color: var(--mywhite);
+    border-radius: 2px;
+    content: '';
+    transform-origin: 50% 50%;
   }
-  &::before {
-    margin-top: -10px;
-  }
-  &::after {
-    margin-top: 10px;
-  }
-}
 
- .header--opened .toggle-menu__burger {
-  background-color: rgba(0, 0, 0, 0);
-  transition-duration: 0.6s;
-  &::after,
-  &::before {
-    transition: margin 0.3s 0s, transform 0.3s 0.3s;
+  .header--closed .toggle-menu__burger {
+    transition-duration: 0.6s;
+    &::after,
+    &::before {
+      transition: transform 0.3s 0s, margin 0.3s 0.3s;
+    }
+    &::before {
+      margin-top: -10px;
+    }
+    &::after {
+      margin-top: 10px;
+    }
   }
-  &::before {
-  transform: rotate(45deg);
-  }
-  &::after {
-  transform: rotate(-45deg);
+
+  .header--opened .toggle-menu__burger {
+    background-color: rgba(0, 0, 0, 0);
+    transition-duration: 0.6s;
+    &::after,
+    &::before {
+      transition: margin 0.3s 0s, transform 0.3s 0.3s;
+    }
+    &::before {
+    transform: rotate(45deg);
+    }
+    &::after {
+    transform: rotate(-45deg);
+    }
   }
 }

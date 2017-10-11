@@ -49,6 +49,7 @@ var gulp = require('gulp'),
   plumber = require('gulp-plumber'),
   postcss = require('gulp-postcss'),
   jshint = require('gulp-jshint'),
+  clean = require('gulp-clean'),
   browserSync = require('browser-sync').create();
 
 

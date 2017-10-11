@@ -1,12 +1,11 @@
 .header {
     flex: none;
-    background-color: var(--myblue);
-    background-image: linear-gradient(210deg, var(--myblue), color(var(--myblue) lightness(-40%)));
+    background-color: rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
 }
 
 .header-wrapper {
-    box-shadow: inset 2px 0 4px 0px color(var(--myblue) l(-45%));
+    /* box-shadow: inset 2px 0 4px 0px color(var(--myblue) l(-45%)); */
 }
 .header-logo svg {
     margin-left: 60px;
@@ -15,6 +14,14 @@
     margin: 0 auto;
     padding: 10px;
     font-family: var(--hfont);
-    font-size: 28px;
     color: var(--mywhite);
+}
+
+.header-name h1 {
+    font-size: 32px;
+    margin: 0;
+}
+
+.header-name h1 span {
+    font-size: 0.9em;
 }

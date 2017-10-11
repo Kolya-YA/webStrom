@@ -4,20 +4,17 @@
   --footer-bg-color: color(var(--header-bg-color) lightness(-10%));
   --nav-color: color(var(--header-bg-color) hue(-60%));
   --nav-item-color: color(var(--nav-color) hue(180%));
-  --mywhite: #feffff;
-  --myblue: #98dafc;
+  --mywhite: #ffffff;
   --mybrown: #daad86;
   --mydark: #312c32;
+  --mygradend: #abbaab;
 }
 
 @custom-selector :--fover :hover, :focus;
 
 * {
   box-sizing: border-box;
-  margin: 0;
 }
-
-
 
 html {
   display: flex;
@@ -28,8 +25,14 @@ html {
 body {
   display: flex;
   flex-wrap: wrap;
-  width: calc(100% - 8px);
+  width: calc(100% - 6px);
   min-height: 100%;
-  margin: 4px auto;
-  background-image: linear-gradient(105deg, var(--mywhite), color(var(--mywhite) lightness(-5%)));
+  min-width: 270px;
+  margin: 3px auto;
+  background: linear-gradient(to bottom, var(--mywhite), var(--mygradend));
+}
+
+.upper-wrapper {
+  display: flex;
+  align-items: stretch;
 }

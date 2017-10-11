@@ -3,39 +3,61 @@
   flex-basis: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-end;
   margin-top: auto;
-  background-color: var(--mybrown);
+  background-color: rgba(0, 0, 0, 0.1);
   font-family: var(--cfont);
 }
 
+.footer-mid-wrapper {
+  font-size: 20px;
+  align-self: center;
+}
+
 .social {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 10px 0;
-}
-
-.social__icon {
+  display: block;
+  padding: 0;
   margin: 10px;
-  width: 30px;
-  height: 30px;
-  background-color: var(--mywhite);
-  text-align: center;
-  border-radius: 4px;
+  list-style: none;
 }
 
-.contacts {
-  margin: 10px 10px 15px;
-}
-
-.contacts a {
+.social__item  a {
   text-decoration: none;
   color: inherit;
-  &:hover {
+  &::before {
+    content: "\2192\00a0";
+  }
+  &:--fover {
     color: var(--mywhite);
   }
 }
+
+.contacts {
+  margin: 10px;
+}
+
+.contacts a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  &:--fover {
+    color: var(--mywhite);
+  }
+
+}
 .copyright {
-  margin: 15px 10px 10px;
+  margin: 10px;
+}
+
+@media (min-width: 480px) {
+  .footer-mid-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-self: inherit;
+  }
+
+  .contacts {
+    margin-left: 80px;
+  }
 }
